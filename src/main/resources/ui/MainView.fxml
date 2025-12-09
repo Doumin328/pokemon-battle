@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.MainController">
+
+    <!-- 上のバー（デバイス選択 + FPS 表示） -->
+    <top>
+        <HBox spacing="15">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+
+            <Label text="デバイス選択：" />
+            <ComboBox fx:id="deviceSelector" prefWidth="200"/>
+        </HBox>
+    </top>
+
+    <left>
+        <GridPane>
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+            <columnConstraints>
+                <ColumnConstraints percentWidth="100" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="65" />
+                <RowConstraints percentHeight="35" />
+            </rowConstraints>
+
+            <!-- 上：キャプチャ映像 -->
+            <ImageView fx:id="captureView"
+                       GridPane.rowIndex="0"
+                       preserveRatio="true"
+                       fitWidth="1920"
+                       fitHeight="1080" />
+
+            <!-- 下：左下ボックス -->
+            <VBox GridPane.rowIndex="1"
+                  spacing="10"
+                  style="-fx-border-color: gray; -fx-border-width: 1;">
+                <Label text="左下ボックス(未定)" />
+            </VBox>
+
+        </GridPane>
+    </left>
+
+    <right>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+            <Label text="右ボックス(未定)" />
+        </VBox>
+    </right>
+
+
+    <!-- 下のバー（Start / Stop ボタン） -->
+    <bottom>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+
+            <Button text="Start Capture" fx:id="startButton" />
+            <Button text="Stop Capture" fx:id="stopButton" disable="true"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

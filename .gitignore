@@ -1,0 +1,34 @@
+# Maven
+target/
+.mvn/
+
+# Keep resources
+!/**/src/main/resources/**
+
+# IDE
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+
+# Native libs and build artifacts
+native/
+libs/
+
+# Generated
+generated-sources/
+
+# Java
+*.class
+
+# Others
+*.tmp
+*.swp
